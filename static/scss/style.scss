@@ -1,0 +1,32 @@
+/*------------------------------------------------------------------
+[Master Stylesheet]
+
+Project:    Sergio Personal Portfolio
+Version:    1.0
+Primary use:    pxdraft
+-------------------------------------------------------------------*/
+/*
+) Base
+) Buttons
+) Header
+) Footer
+) Titles
+) Title
+) Home Banner
+) About Us
+) Resume
+) Work
+) Blog
+) Contact
+*/
+
+@import "scss/variable";
+@import "scss/mixin";
+@import "scss/base";
+@import "scss/button";
+@import "scss/color";
+@import "scss/header";
+@import "scss/footer";
+@import "scss/blog";
+@import "scss/portfolio";
+@import "scss/style";

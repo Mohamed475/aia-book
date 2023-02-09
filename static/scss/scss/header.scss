@@ -1,0 +1,241 @@
+.main-left {
+	@include up-lg {
+		left: 250px;
+	    position: absolute;
+	    height: 100%;
+	    width: calc(100% - 250px);
+	}
+}
+
+.header-left {
+	width: 250px;
+	position: fixed;
+	bottom: 0;
+	top: 0;
+	background: $px-bg-3;
+	.theme-light & {
+		background: $px-gray;
+	}
+	.scroll-bar {
+		height: calc(100% - 50px);
+	}
+	.hl-top {
+		text-align: center;
+	    position: relative;
+	    padding: 65px 25px 25px;
+		&:after {
+			content: "";
+			position: absolute;
+			top: -180px;
+			left: -50px;
+			right: 0;
+			bottom: 0;
+			z-index: -1;
+			border-radius: 0 0 50% 50%;
+			width: 350px;
+			height: 350px;
+			background: $px-theme;
+		}
+		.img {
+			width: 120px;
+		    height: 120px;
+		    overflow: hidden;
+		    display: inline-block;
+		    vertical-align: top;
+		    border-radius: 50%;
+		    border: 5px solid $px-white;
+		}
+		h5 {
+			margin: 23px 0 0;
+		    font-weight: 300;
+		    text-transform: uppercase;
+		    font-size: 14px;
+		    letter-spacing: 7px;
+		    color: $px-white;
+		    .theme-light & {
+		    	color: $px-dark;
+		    }
+		}
+	}
+	.nav-menu {
+		padding-top: 45px;
+		padding-bottom: 45px;
+		li {
+			width: 100%;
+			+ li {
+				border-top: 1px solid rgba($px-white, 0.03);
+				.theme-light & {
+					border-top: 1px solid rgba($px-dark, 0.03);
+				}
+			}
+			.nav-link {
+				margin: 0;
+				padding: 15px 30px;
+				color: rgba($px-white, 0.8);
+				text-decoration: none;
+				@include transition(ease all 0.35s);
+				font-size: 12px;
+				font-weight: 300;
+				letter-spacing: 3px;
+				text-transform: uppercase;
+				line-height: 18px;
+				.theme-light & {
+					color: rgba($px-dark, 0.7);
+					font-weight: 400;
+				}
+				i {
+					font-size: 18px;
+					font-weight: 300;
+					display: inline-block;
+					vertical-align: middle;
+				}
+				span {
+					display: inline-block;
+					vertical-align: middle;
+					margin-left: 10px;
+				}
+				@include up-sm {
+					&:hover {
+						color: $px-white;
+						.theme-light & {
+							color: $px-theme;
+						}
+					}
+				}
+			}
+			&.active {
+				a {
+					color: $px-theme;
+					font-weight: 600;
+					.theme-light & {
+						font-weight: 600;
+						color: $px-theme;
+					}
+				}
+			}
+		}
+	}
+	.social-icons {
+	    position: absolute;
+	    bottom: 0;
+	    left: 0;
+	    right: 0;
+	    padding: 12px 0;
+    	a {
+		    color: $px-white;
+		    font-size: 14px;
+		    margin-right: 17px;
+		    .theme-light & {
+		    	color: $px-dark;
+		    }
+		    &:hover {
+		    	color: $px-theme;
+		    }
+    	}
+    }
+}
+
+.tooltip {
+	font-size: 12px;
+}
+
+
+.mob-header {
+	padding: 15px;
+	display: none;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: 11;
+	background: $px-bg-1;
+	.theme-light & {
+		background: $px-white;
+	}
+	> .d-flex {
+		align-items: center;
+	}
+	.navbar-brand {
+		padding: 0;
+	}
+	.logo-text {
+		font-weight: 600;
+		color: $px-white;
+		font-size: 25px;
+		line-height: 1;
+		.theme-light & {
+			color: $px-dark;
+		}
+	}
+}
+
+.toggler-menu {
+	width: 40px;
+    height: 40px;
+    position: relative;
+    margin: 0;
+    border-radius: 0;
+    padding: 0;
+    margin-left: 15px;
+	background: $px-theme;
+	border: none;
+	margin-left: auto;
+	span {
+		position: absolute;
+	    top: 0;
+	    left: 0;
+	    bottom: 0;
+	    right: 0;
+	    width: 25px;
+	    height: 2px;
+	    margin: auto;
+	    box-shadow: 0px -8px 0 0px currentColor, 0px 8px 0 0px currentColor;
+		background: $px-white;
+		color: $px-white;
+	}
+}
+
+@include down-lg {
+	.mob-header {
+		display: block;
+	}
+	.header-left {
+		@include transition(ease all 0.35s);
+		left: -300px;
+		z-index: 222;
+		&.menu-open {
+			left: 0;
+		}
+	}
+}
+
+
+#pp-nav {
+	margin-right: 50px;
+	@include down-md {
+		display: none;
+	}
+	li {
+		margin: 6px 0;
+		padding: 0;
+		width: 10px;
+		height: 10px;
+		position: relative;
+		a {
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			background: rgba($px-white, 0.3);
+			border-radius: 50%;
+			.theme-light & {
+				background: rgba($px-dark, 0.3);
+			}
+			&.active {
+				background: $px-theme;
+			}
+			span {
+				display: none;
+			}
+		}
+	}
+}

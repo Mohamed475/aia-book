@@ -1,0 +1,128 @@
+body {
+	color: $px-body;
+	font-family: $px-font;
+	line-height: $px-line-height;
+	font-size: $px-font-size;
+	font-weight: 300;
+	&.theme-light {
+		background: $px-white;
+		color: $px-body-light;
+		font-weight: 400;
+	}
+}
+
+.font-alt {
+	font-family: $px-font-alt;
+}
+
+img {
+	max-width: 100%;
+}
+
+* {
+	outline: none !important;
+}
+
+a {
+	color: $px-theme;
+	@include px-hover {
+		color: darken($px-theme, 8%);
+		text-decoration: none;
+	}
+}
+
+mark {
+    background-image: linear-gradient($px-theme, $px-theme);
+    background-size: 100% 3px;
+    background-repeat: no-repeat;
+    background-position: 0 bottom;
+    background-color: transparent;
+    padding: 0;
+    color: currentColor;
+}
+
+/* ----------------------
+*	Loading
+---------------------------*/
+#loading {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: $px-theme;
+	z-index: 99999;
+}
+.load-circle {
+	position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    width: 50px;
+    height: 50px;
+	 span {
+	  display: inline-block;
+	  width: 64px;
+	  height: 64px;
+	  &:after {
+		  content: " ";
+		  display: block;
+		  width: 46px;
+		  height: 46px;
+		  margin: 1px;
+		  border-radius: 50%;
+		  border: 5px solid $px-white;
+		  border-color: $px-white transparent $px-white transparent;
+		  animation: lds-dual-ring 1.2s linear infinite;	
+	  }
+	}
+}
+
+@keyframes lds-dual-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
+
+/* ----------------------
+*	owl 
+---------------------------*/
+.owl-dots {
+	text-align: center;
+	.owl-dot {
+		display: inline-block;
+		vertical-align: top;
+		width: 10px;
+		height: 10px;
+		background: transparent;
+		border: 1px solid $px-white;
+		@include transition(ease all 0.55s);
+		border-radius: 50%;
+		margin: 0 5px;
+		.theme-light & {
+			border-color: $px-dark;
+		}
+		&.active {
+			background: $px-white;
+			.theme-light & {
+				background: $px-dark;
+			}
+		}
+	}
+}
+
+.owl-carousel {
+	.owl-item {
+		img {
+			width: auto;
+			max-width: 100%;
+		}
+	}
+}

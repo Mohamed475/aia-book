@@ -1,0 +1,211 @@
+/*---------------------------
+ Portfolio Start
+------------------------------*/
+.portfolio-content {
+    &.grid-col-2 {
+        .grid-item {
+            width: 50%;
+
+            @include down-sm {
+                width: 100%;
+            }
+        }
+    }
+
+    &.grid-col-3 {
+        .grid-item {
+            @include up-md {
+                width: 33.3333%;
+            }
+
+            @include down-md {
+                width: 50%;
+            }
+
+            @include down-sm {
+                width: 100%;
+            }
+        }
+    }
+
+    &.grid-col-4 {
+        .grid-item {
+            @include up-md {
+                width: 33.3333%;
+            }
+
+            @include up-lg {
+                width: 25%;
+            }
+
+            @include down-md {
+                width: 50%;
+            }
+
+            @include down-sm {
+                width: 100%;
+            }
+        }
+    }
+
+    &.grid-col-5 {
+        .grid-item {
+            @include up-md {
+                width: 33.3333%;
+            }
+
+            @include up-lg {
+                width: 20%;
+            }
+
+            @include down-md {
+                width: 50%;
+            }
+
+            @include down-sm {
+                width: 100%;
+            }
+        }
+    }
+
+    &.grid-gutter-md {
+        margin-left: -4px;
+        margin-right: -4px;
+
+        .grid-item {
+            padding: 8px;
+        }
+    }
+
+    &.grid-gutter-lg {
+        margin-left: -12px;
+        margin-right: -12px;
+
+        .grid-item {
+            padding: 12px;
+        }
+    }
+
+    .grid-item {
+        float: left;
+    }
+
+}
+
+/*Portfolio Filter*/
+.portfolio-filter-01 {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    .filter {
+        li {
+            cursor: pointer;
+            margin: 0 15px;
+            color: $px-white;
+            position: relative;
+            padding: 5px 0;
+            font-size: 13px;
+            text-transform: uppercase;
+            line-height: normal;
+            letter-spacing: 2px;
+            .theme-light & {
+                color: $px-dark;
+            }
+            @include down-sm {
+                margin: 0 8px;
+                font-size: 15px;
+            }
+            &:after {
+                content: "";
+                width: 0px;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                margin: auto;
+                height: 2px;
+                background: $px-theme;
+                position: absolute;
+                @include transition(ease all 0.55s);
+            }
+
+            &:last-child {
+                margin-right: 0;
+            }
+
+            &:first-child {
+                margin-left: 0;
+            }
+
+
+            &.active {
+                &:after {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+
+/*Portfolio Style 2*/
+.portfolio-box-01 {
+    background: $px-white;
+    position: relative;
+    .portfolio-img {
+        position: relative;
+    }
+    .portfolio-icon {
+        position: absolute;
+        bottom: 20px;
+        right: 20px;
+        opacity: 0;
+        @include transition(ease all 0.35s); 
+        a {
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            color: $px-white;
+            display: inline-block;
+            vertical-align: top;
+            background: $px-theme;
+            font-size: 24px;
+            text-align: center;
+            span {
+                line-height: inherit;
+            }
+        }
+    }
+
+    .portfolio-info {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        padding: 20px;
+        z-index: 1;
+        background: $px-dark;
+        right: 20px;
+        text-align: center;
+        opacity: 0;
+        @include transition(ease all 0.35s); 
+        h5 {
+            margin: 0 0 4px;
+            color: $px-white;
+            font-weight: 500;
+            font-size: 22px;
+            a {
+                color: $px-white;
+            }
+        }
+        span {
+            color: rgba($px-white, 0.6);
+        }
+    }
+
+    &:hover {
+        .portfolio-info {
+            opacity: 1;
+        }
+        .portfolio-icon {
+            opacity: 1;
+        }
+    }
+}
